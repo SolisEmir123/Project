@@ -19,6 +19,7 @@ public class Sigup extends javax.swing.JFrame {
     public Sigup() {
         initComponents();
         btnSave.setEnabled(false);
+        this.setLocationRelativeTo(null);         
     }
     
     public void clear(){

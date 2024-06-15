@@ -23,6 +23,7 @@ public class login extends javax.swing.JFrame {
     public login() {
         initComponents();
         btnLogin.setEnabled(false);
+        this.setLocationRelativeTo(null);        
     }
     
     public void clear(){
@@ -41,6 +42,27 @@ public class login extends javax.swing.JFrame {
         }
     }
 
+    public void login(){
+                String email = txtEmail.getText();
+        String password = txtPassword.getText();
+        User user = null;
+        user = UserDao.login(email, password);
+        if(user == null) {
+            JOptionPane.showMessageDialog(null, "<html><b style=\"color:red\">Contraseña o usuario incorrecto</b></html>","Message", JOptionPane.ERROR_MESSAGE);
+        } else {
+            if(user.getStatus().equals("false")) {
+                ImageIcon icon = new ImageIcon("src/popupicon/wait.png");
+                
+                JOptionPane.showMessageDialog(null, "<html><b>Espera la aprovacion</b></html>", "Message", JOptionPane.INFORMATION_MESSAGE, icon);
+                clear();
+            }
+            if(user.getStatus().equals("true")) {
+                setVisible(false);
+                new Home(email).setVisible(true);
+            }
+        }
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -71,6 +93,9 @@ public class login extends javax.swing.JFrame {
             }
         });
         txtEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtEmailKeyPressed(evt);
+            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtEmailKeyReleased(evt);
             }
@@ -114,6 +139,9 @@ public class login extends javax.swing.JFrame {
         });
 
         txtPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPasswordKeyPressed(evt);
+            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtPasswordKeyReleased(evt);
             }
@@ -205,25 +233,7 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        String email = txtEmail.getText();
-        String password = txtPassword.getText();
-        User user = null;
-        user = UserDao.login(email, password);
-        if(user == null) {
-            JOptionPane.showMessageDialog(null, "<html><b style=\"color:red\">Contraseña o usuario incorrecto</b></html>","Message", JOptionPane.ERROR_MESSAGE);
-        } else {
-            if(user.getStatus().equals("false")) {
-                ImageIcon icon = new ImageIcon("src/popupicon/wait.png");
-                
-                JOptionPane.showMessageDialog(null, "<html><b>Espera la aprovacion</b></html>", "Message", JOptionPane.INFORMATION_MESSAGE, icon);
-                clear();
-            }
-            if(user.getStatus().equals("true")) {
-                setVisible(false);
-                new Home(email).setVisible(true);
-            }
-        }
-        
+        login();
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void txtEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyReleased
@@ -242,6 +252,20 @@ public class login extends javax.swing.JFrame {
     private void txtPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPasswordKeyReleased
         validateFields();
     }//GEN-LAST:event_txtPasswordKeyReleased
+
+    private void txtEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyPressed
+         char c = (char) evt.getKeyCode();
+    if(c == evt.VK_ENTER){
+        login();
+    }
+    }//GEN-LAST:event_txtEmailKeyPressed
+
+    private void txtPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPasswordKeyPressed
+         char c = (char) evt.getKeyCode();
+    if(c == evt.VK_ENTER){
+        login();
+    }
+    }//GEN-LAST:event_txtPasswordKeyPressed
 
     /**
      * @param args the command line arguments

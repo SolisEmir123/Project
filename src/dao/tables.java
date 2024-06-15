@@ -13,8 +13,10 @@ public class tables {
         try {
             String userTable = "create table user(id int AUTO_INCREMENT primary key,name varchar(200), email varchar(200),mobileNumber varchar(200),password varchar(200), status varchar(20),UNIQUE (email))";
             String adminDetails = "insert into user(name,email,mobileNumber,password,status) values('Admin','admin@gmail.com','1234567890','cbtis2008','true')";
-            DbOperations.setDataorDelete(userTable, "Tabla de Usuario creada");
+            String categoryTable = "create table category(id int AUTO_INCREMENT primary key,name varchar(200))";
+            DbOperations.setDataorDelete(userTable, "Tabla de Usuario Creada");
             DbOperations.setDataorDelete(adminDetails, "Usuario de Admin Creado");
+            DbOperations.setDataorDelete(categoryTable, "Tabla de Category Creada");
         }
         catch(Exception e) {
                 JOptionPane.showMessageDialog(null, e);
