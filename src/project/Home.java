@@ -78,40 +78,45 @@ public class Home extends javax.swing.JFrame {
                 btnExitActionPerformed(evt);
             }
         });
-        getContentPane().add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, -1, -1));
+        getContentPane().add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 10, -1, -1));
 
         btnCategory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/category.png"))); // NOI18N
-        btnCategory.setText("Manage Category");
+        btnCategory.setText("Editar Categorias");
         btnCategory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCategoryActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 562, -1, -1));
+        getContentPane().add(btnCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 680, -1, -1));
 
         btnNewProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/new product.png"))); // NOI18N
         btnNewProduct.setText("Nuevo Producto");
-        getContentPane().add(btnNewProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 562, -1, -1));
+        btnNewProduct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNewProductActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnNewProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 680, -1, -1));
 
         btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/view edit delete product.png"))); // NOI18N
         btnEdit.setText("Ver, Editar o Eliminar Producto");
-        getContentPane().add(btnEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 562, -1, -1));
+        getContentPane().add(btnEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 680, -1, -1));
 
         btnVerifiedU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/verify users.png"))); // NOI18N
         btnVerifiedU.setText("Verificar Usuario");
-        getContentPane().add(btnVerifiedU, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 562, -1, -1));
+        getContentPane().add(btnVerifiedU, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 680, -1, -1));
 
         btnNewVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/place order.png"))); // NOI18N
         btnNewVenta.setText("Crear Venta");
-        getContentPane().add(btnNewVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, -1, -1));
+        getContentPane().add(btnNewVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, -1, -1));
 
         btnViewVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/View Bills & Order Placed Details.png"))); // NOI18N
         btnViewVentas.setText("Ver ventas");
-        getContentPane().add(btnViewVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, -1, -1));
+        getContentPane().add(btnViewVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/home-background-image.png"))); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 620));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1340, 740));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -134,6 +139,10 @@ public class Home extends javax.swing.JFrame {
     private void btnCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoryActionPerformed
         new ManageCategory().setVisible(true);
     }//GEN-LAST:event_btnCategoryActionPerformed
+
+    private void btnNewProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewProductActionPerformed
+        new AddNewProduct().setVisible(true);
+    }//GEN-LAST:event_btnNewProductActionPerformed
 
     /**
      * @param args the command line arguments
