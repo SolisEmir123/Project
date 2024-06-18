@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  * @author emiry
  */
 public class Home extends javax.swing.JFrame {
-    public String email;
+    public String name;
     /**
      * Creates new form Home
      */
@@ -22,8 +22,8 @@ public class Home extends javax.swing.JFrame {
 
     public Home(String userEmail) {
         initComponents();
-        email = userEmail;
-        if(!email.equals("admin@theonedestiny.online")) {
+        name = userEmail;
+        if(!name.equals("admin1")) {
             btnCategory.setVisible(false);
             btnNewProduct.setVisible(false);
             btnEdit.setVisible(false);

@@ -113,7 +113,7 @@ public class EditProduct extends javax.swing.JFrame {
 
         txtID.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/full-page-background.PNG"))); // NOI18N
         txtID.setText("jLabel8");
-        getContentPane().add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, -1));
+        getContentPane().add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1320, 730));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
