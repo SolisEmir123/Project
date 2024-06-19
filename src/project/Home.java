@@ -12,6 +12,8 @@ import javax.swing.JOptionPane;
  */
 public class Home extends javax.swing.JFrame {
     public String name;
+    int xMouse, yMouse;
+            
     /**
      * Creates new form Home
      */
@@ -50,6 +52,7 @@ public class Home extends javax.swing.JFrame {
         btnNewVenta = new javax.swing.JButton();
         btnViewVentas = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -118,18 +121,30 @@ public class Home extends javax.swing.JFrame {
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1340, 740));
 
+        jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel1MouseDragged(evt);
+            }
+        });
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel1MousePressed(evt);
+            }
+        });
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1340, 90));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-       int a = JOptionPane.showConfirmDialog(null, "Estas seguro de salir?","Select", JOptionPane.YES_NO_OPTION);
+        int a = JOptionPane.showConfirmDialog(null, "Estas seguro de salir?","Selecciona", JOptionPane.YES_NO_OPTION);
         if(a==0){
             System.exit(0);
         }
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
-        int a = JOptionPane.showConfirmDialog(null, "Estas seguro que quieres Cerrar Sesión", "Select", JOptionPane.YES_NO_OPTION);
+        int a = JOptionPane.showConfirmDialog(null, "Estas seguro que quieres Cerrar Sesión", "Selecciona", JOptionPane.YES_NO_OPTION);
         if(a == 0) {
             setVisible(false);
             new login().setVisible(true);
@@ -143,6 +158,17 @@ public class Home extends javax.swing.JFrame {
     private void btnNewProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewProductActionPerformed
         new AddNewProduct().setVisible(true);
     }//GEN-LAST:event_btnNewProductActionPerformed
+
+    private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_jPanel1MousePressed
+
+    private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_jPanel1MouseDragged
 
     /**
      * @param args the command line arguments
@@ -165,5 +191,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton btnVerifiedU;
     private javax.swing.JButton btnViewVentas;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
