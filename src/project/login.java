@@ -59,7 +59,7 @@ public class login extends javax.swing.JFrame {
             }
             if(user.getStatus().equals("true")) {
                 setVisible(false);
-                new Home(name).setVisible(true);
+                new Principal(name).setVisible(true);
             }
         }
         
