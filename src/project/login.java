@@ -59,7 +59,9 @@ public class login extends javax.swing.JFrame {
             }
             if(user.getStatus().equals("true")) {
                 setVisible(false);
-                new Principal(name).setVisible(true);
+                Principal principal = new Principal(name);
+                principal.setVisible(true);
+                principal.setExtendedState(principal.MAXIMIZED_BOTH);
             }
         }
         
@@ -310,7 +312,7 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_signupMouseClicked
 
     private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jPanel3MouseClicked
 
     /**

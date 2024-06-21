@@ -4,6 +4,8 @@
  */
 package project;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author emiry
@@ -24,7 +26,8 @@ public class Principal extends javax.swing.JFrame {
     public Principal(String userEmail) {
         initComponents();
         name = userEmail;
-        if(!name.equals("admin1")) {
+        if(!name.equals("Admin")) {
+            btnPanelAdmin.setVisible(false);
             //btnCategory.setVisible(false);
             //btnNewProduct.setVisible(false);
             //btnEdit.setVisible(false);
@@ -64,7 +67,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel13 = new javax.swing.JPanel();
         jPanel14 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
-        jPanel16 = new javax.swing.JPanel();
+        btnPanelAdmin = new javax.swing.JPanel();
         btnAdmin = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
 
@@ -83,6 +86,12 @@ public class Principal extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cerrar.png"))); // NOI18N
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
         jPanel3.add(jLabel1, java.awt.BorderLayout.CENTER);
 
         jPanel6.add(jPanel3, java.awt.BorderLayout.LINE_END);
@@ -106,6 +115,11 @@ public class Principal extends javax.swing.JFrame {
         btnNewVenta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnNewVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/place order.png"))); // NOI18N
         btnNewVenta.setText("CREAR VENTA");
+        btnNewVenta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnNewVentaMouseClicked(evt);
+            }
+        });
         jPanel5.add(btnNewVenta, java.awt.BorderLayout.CENTER);
 
         jPanel1.add(jPanel5, java.awt.BorderLayout.PAGE_START);
@@ -118,6 +132,12 @@ public class Principal extends javax.swing.JFrame {
         btnLogout.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logout.png"))); // NOI18N
         btnLogout.setText("Cerrar Sesión");
+        btnLogout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLogoutMouseClicked(evt);
+            }
+        });
         jPanel4.add(btnLogout, java.awt.BorderLayout.CENTER);
 
         jPanel1.add(jPanel4, java.awt.BorderLayout.PAGE_END);
@@ -129,10 +149,10 @@ public class Principal extends javax.swing.JFrame {
         jPanel8.setPreferredSize(new java.awt.Dimension(250, 75));
         jPanel8.setLayout(new java.awt.BorderLayout());
 
-        btnViewVentas.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnViewVentas.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnViewVentas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnViewVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/View Bills & Order Placed Details.png"))); // NOI18N
-        btnViewVentas.setText("Ver Ventas");
+        btnViewVentas.setText("EDITAR VENTAS");
         jPanel8.add(btnViewVentas, java.awt.BorderLayout.CENTER);
 
         jPanel7.add(jPanel8, java.awt.BorderLayout.PAGE_START);
@@ -195,17 +215,17 @@ public class Principal extends javax.swing.JFrame {
         jPanel15.setBackground(new java.awt.Color(0, 134, 190));
         jPanel15.setLayout(new java.awt.BorderLayout());
 
-        jPanel16.setBackground(new java.awt.Color(0, 134, 190));
-        jPanel16.setPreferredSize(new java.awt.Dimension(250, 75));
-        jPanel16.setLayout(new java.awt.BorderLayout());
+        btnPanelAdmin.setBackground(new java.awt.Color(0, 134, 190));
+        btnPanelAdmin.setPreferredSize(new java.awt.Dimension(250, 75));
+        btnPanelAdmin.setLayout(new java.awt.BorderLayout());
 
         btnAdmin.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/verify users.png"))); // NOI18N
         btnAdmin.setText("MENU ADMIN");
-        jPanel16.add(btnAdmin, java.awt.BorderLayout.CENTER);
+        btnPanelAdmin.add(btnAdmin, java.awt.BorderLayout.CENTER);
 
-        jPanel15.add(jPanel16, java.awt.BorderLayout.PAGE_START);
+        jPanel15.add(btnPanelAdmin, java.awt.BorderLayout.PAGE_START);
 
         jPanel13.add(jPanel15, java.awt.BorderLayout.CENTER);
 
@@ -236,6 +256,25 @@ public class Principal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+    int a = JOptionPane.showConfirmDialog(null, "Estas seguro de salir?","Selecciona", JOptionPane.YES_NO_OPTION);
+        if(a==0){
+            System.exit(0);
+        }
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void btnLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLogoutMouseClicked
+      int a = JOptionPane.showConfirmDialog(null, "Estas seguro que quieres Cerrar Sesión", "Selecciona", JOptionPane.YES_NO_OPTION);
+        if(a == 0) {
+            setVisible(false);
+            new login().setVisible(true);
+        }
+    }//GEN-LAST:event_btnLogoutMouseClicked
+
+    private void btnNewVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNewVentaMouseClicked
+        
+    }//GEN-LAST:event_btnNewVentaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -276,6 +315,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel btnAdmin;
     private javax.swing.JLabel btnLogout;
     private javax.swing.JLabel btnNewVenta;
+    private javax.swing.JPanel btnPanelAdmin;
     private javax.swing.JLabel btnViewVentas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
@@ -286,7 +326,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
