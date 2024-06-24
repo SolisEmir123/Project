@@ -22,8 +22,7 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
-        this.setLocationRelativeTo(null);
-        this.setExtendedState(this.MAXIMIZED_BOTH);
+
     }
 
     public Principal(String userEmail) {
@@ -31,7 +30,6 @@ public class Principal extends javax.swing.JFrame {
         email = userEmail;
         if (!email.equals("admin@theonedestiny.online")) {
             btnPanelAdmin.setVisible(false);
-
         }
     }
 

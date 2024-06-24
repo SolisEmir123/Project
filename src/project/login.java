@@ -146,7 +146,7 @@ public class login extends javax.swing.JFrame {
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 430, 20));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel7.setText("Usuario");
+        jLabel7.setText("Correo");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
         txtPassword.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N

@@ -15,8 +15,7 @@ public class AdminMenu extends javax.swing.JFrame {
      */
     public AdminMenu() {
         initComponents();
-        this.setLocationRelativeTo(null);
-
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -28,129 +27,149 @@ public class AdminMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel29 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jPanel30 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jPanel31 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
-        addWindowFocusListener(new java.awt.event.WindowFocusListener() {
-            public void windowGainedFocus(java.awt.event.WindowEvent evt) {
-            }
-            public void windowLostFocus(java.awt.event.WindowEvent evt) {
-                formWindowLostFocus(evt);
+        addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                formFocusLost(evt);
             }
         });
 
-        jPanel29.setBackground(new java.awt.Color(0, 134, 190));
-        jPanel29.setPreferredSize(new java.awt.Dimension(500, 200));
-        jPanel29.setLayout(new java.awt.BorderLayout());
+        jPanel6.setLayout(new java.awt.BorderLayout());
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/category.png"))); // NOI18N
-        jLabel4.setText("EDITAR CATEGORIA");
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel4MouseEntered(evt);
-            }
-        });
-        jPanel29.add(jLabel4, java.awt.BorderLayout.CENTER);
+        jPanel7.setBackground(new java.awt.Color(0, 134, 190));
+        jPanel7.setPreferredSize(new java.awt.Dimension(201, 354));
+        jPanel7.setLayout(new java.awt.BorderLayout());
 
-        getContentPane().add(jPanel29, java.awt.BorderLayout.CENTER);
-
-        jPanel30.setBackground(new java.awt.Color(0, 134, 190));
-        jPanel30.setLayout(new java.awt.BorderLayout());
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/new product.png"))); // NOI18N
-        jLabel5.setText("NUEVO PRODUCTO");
-        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
-            }
-        });
-        jPanel30.add(jLabel5, java.awt.BorderLayout.CENTER);
-
-        getContentPane().add(jPanel30, java.awt.BorderLayout.PAGE_START);
-
-        jPanel31.setBackground(new java.awt.Color(0, 134, 190));
-        jPanel31.setLayout(new java.awt.BorderLayout());
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/view edit delete product.png"))); // NOI18N
-        jLabel6.setText("EDITAR PRODUCTO");
-        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
-            }
-        });
-        jPanel31.add(jLabel6, java.awt.BorderLayout.CENTER);
-
-        getContentPane().add(jPanel31, java.awt.BorderLayout.PAGE_END);
-
-        jPanel1.setBackground(new java.awt.Color(0, 134, 190));
-        jPanel1.setPreferredSize(new java.awt.Dimension(400, 200));
-        jPanel1.setLayout(new java.awt.BorderLayout());
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setBackground(new java.awt.Color(105, 54, 25));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/verify users.png"))); // NOI18N
-        jLabel1.setText("VERIFICAR USUARIO");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/category.png"))); // NOI18N
+        jLabel1.setText("EDITAR CATEGORIAS");
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel1, java.awt.BorderLayout.CENTER);
+        jPanel7.add(jLabel1, java.awt.BorderLayout.CENTER);
 
-        getContentPane().add(jPanel1, java.awt.BorderLayout.LINE_END);
+        jPanel6.add(jPanel7, java.awt.BorderLayout.LINE_START);
+
+        jPanel8.setBackground(new java.awt.Color(0, 134, 190));
+        jPanel8.setMinimumSize(new java.awt.Dimension(201, 100));
+        jPanel8.setLayout(new java.awt.BorderLayout());
+
+        jLabel4.setBackground(new java.awt.Color(105, 54, 25));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/verify users.png"))); // NOI18N
+        jLabel4.setText("VERIFICAR USUARIO");
+        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel4.setPreferredSize(new java.awt.Dimension(201, 19));
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        jPanel8.add(jLabel4, java.awt.BorderLayout.CENTER);
+
+        jPanel6.add(jPanel8, java.awt.BorderLayout.LINE_END);
+
+        jPanel9.setLayout(new java.awt.BorderLayout());
+
+        jPanel10.setBackground(new java.awt.Color(0, 134, 190));
+        jPanel10.setPreferredSize(new java.awt.Dimension(201, 354));
+        jPanel10.setLayout(new java.awt.BorderLayout());
+
+        jLabel2.setBackground(new java.awt.Color(105, 54, 25));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/new product.png"))); // NOI18N
+        jLabel2.setText("NUEVO PRODUCTO");
+        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+        jPanel10.add(jLabel2, java.awt.BorderLayout.CENTER);
+
+        jPanel9.add(jPanel10, java.awt.BorderLayout.LINE_START);
+
+        jPanel11.setBackground(new java.awt.Color(0, 134, 190));
+        jPanel11.setPreferredSize(new java.awt.Dimension(201, 354));
+        jPanel11.setLayout(new java.awt.BorderLayout());
+
+        jLabel3.setBackground(new java.awt.Color(105, 54, 25));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/view edit delete product.png"))); // NOI18N
+        jLabel3.setText("EDITAR PRODUCTO");
+        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        jPanel11.add(jLabel3, java.awt.BorderLayout.CENTER);
+
+        jPanel9.add(jPanel11, java.awt.BorderLayout.LINE_END);
+
+        jPanel6.add(jPanel9, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(jPanel6, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void formWindowLostFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowLostFocus
+    private void formFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusLost
         setVisible(false);
-    }//GEN-LAST:event_formWindowLostFocus
-
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-       this.setVisible(false);
-       new AddNewProduct().setVisible(true);
-    }//GEN-LAST:event_jLabel5MouseClicked
-
-    private void jLabel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel4MouseEntered
-
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        this.setVisible(false);
-        new ManageCategory().setVisible(true);
-    }//GEN-LAST:event_jLabel4MouseClicked
-
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        this.setVisible(false);
-        new EditProduct().setVisible(true);
-    }//GEN-LAST:event_jLabel6MouseClicked
+    }//GEN-LAST:event_formFocusLost
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        setVisible(false);
-        new VerifyUsers().setVisible(true);
+        ManageCategory cat = new ManageCategory();
+        cat.setLocationRelativeTo(null);
+        cat.setVisible(true);
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        AddNewProduct a = new AddNewProduct();
+        a.setLocationRelativeTo(null);
+        a.setVisible(true);
+    }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        EditProduct b = new EditProduct();
+        b.setLocationRelativeTo(null);
+        b.setVisible(true);
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        VerifyUsers b = new VerifyUsers();
+        b.setLocationRelativeTo(null);
+        b.setVisible(true);
+    }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -178,6 +197,7 @@ public class AdminMenu extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(AdminMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -189,12 +209,14 @@ public class AdminMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel29;
-    private javax.swing.JPanel jPanel30;
-    private javax.swing.JPanel jPanel31;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     // End of variables declaration//GEN-END:variables
 }
