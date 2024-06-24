@@ -3,13 +3,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package project;
+
 import model.Category;
 import dao.CategoryDao;
+import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import java.util.*;
 import javax.swing.JOptionPane;
 import javax.swing.table.TableModel;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import java.awt.BorderLayout;
+
 /**
  *
  * @author emiry
@@ -22,15 +28,22 @@ public class ManageCategory extends javax.swing.JFrame {
     public ManageCategory() {
         initComponents();
         btnSave.setEnabled(false);
+        this.setLocationRelativeTo(null);        
     }
-    
-    public void validateFields(){
+
+    public void validateFields() {
         String category = txtName.getText();
-        if(!category.equals("")) {
+        if (!category.equals("")) {
             btnSave.setEnabled(true);
         } else {
             btnSave.setEnabled(false);
         }
+    }
+
+    public JPanel getPanel() {
+        // Retornar el JPanel creado
+        return jPanel1;
+
     }
 
     /**
@@ -41,70 +54,85 @@ public class ManageCategory extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
-        jLabel1 = new javax.swing.JLabel();
-        btnClose = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
         btnSave = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         setLocation(new java.awt.Point(350, 134));
         setUndecorated(true);
+        setResizable(false);
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 formComponentShown(evt);
             }
         });
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/category.png"))); // NOI18N
-        jLabel1.setText("Manage Category");
-        jLabel1.setToolTipText("");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new java.awt.BorderLayout());
 
-        btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close.png"))); // NOI18N
-        btnClose.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCloseActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(659, 6, 35, 30));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setPreferredSize(new java.awt.Dimension(900, 75));
+        jPanel2.setLayout(new java.awt.BorderLayout());
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setPreferredSize(new java.awt.Dimension(200, 75));
+        jPanel3.setLayout(new java.awt.BorderLayout());
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("View Category");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(416, 44, -1, -1));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/category.png"))); // NOI18N
+        jLabel2.setText("EDITAR CATEGORIA");
+        jPanel3.add(jLabel2, java.awt.BorderLayout.CENTER);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+        jPanel2.add(jPanel3, java.awt.BorderLayout.LINE_START);
 
-            },
-            new String [] {
-                "ID", "Category"
-            }
-        ));
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setPreferredSize(new java.awt.Dimension(150, 75));
+        jPanel5.setLayout(new java.awt.BorderLayout());
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("X");
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable1MouseClicked(evt);
+                jLabel1MouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jPanel5.add(jLabel1, java.awt.BorderLayout.CENTER);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(313, 90, 335, 271));
+        jPanel2.add(jPanel5, java.awt.BorderLayout.LINE_END);
+
+        jPanel1.add(jPanel2, java.awt.BorderLayout.PAGE_START);
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setPreferredSize(new java.awt.Dimension(450, 367));
+        jPanel4.setLayout(new java.awt.GridBagLayout());
 
         jLabel3.setText("Da click para eliminar una Categoria");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(379, 373, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setText("Añadir Nueva Categoria");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 147, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(107, 19, 15, 16);
+        jPanel4.add(jLabel3, gridBagConstraints);
 
         txtName.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtName.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -112,7 +140,24 @@ public class ManageCategory extends javax.swing.JFrame {
                 txtNameKeyReleased(evt);
             }
         });
-        getContentPane().add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 193, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.ipadx = 129;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 115, 0, 0);
+        jPanel4.add(txtName, gridBagConstraints);
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setText("Añadir Nueva Categoria");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(140, 130, 0, 0);
+        jPanel4.add(jLabel4, gridBagConstraints);
 
         btnSave.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save.png"))); // NOI18N
@@ -122,7 +167,12 @@ public class ManageCategory extends javax.swing.JFrame {
                 btnSaveActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 236, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(27, 115, 0, 0);
+        jPanel4.add(btnSave, gridBagConstraints);
 
         btnClear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnClear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/clear.png"))); // NOI18N
@@ -132,14 +182,75 @@ public class ManageCategory extends javax.swing.JFrame {
                 btnClearActionPerformed(evt);
             }
         });
-        getContentPane().add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 236, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(27, 10, 0, 0);
+        jPanel4.add(btnClear, gridBagConstraints);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/small-page-background.png"))); // NOI18N
-        jLabel5.setText("jLabel5");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, -1));
+        jPanel1.add(jPanel4, java.awt.BorderLayout.LINE_START);
+
+        jPanel6.setPreferredSize(new java.awt.Dimension(450, 367));
+        jPanel6.setLayout(new java.awt.GridLayout(1, 0));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Category"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel6.add(jScrollPane1);
+
+        jPanel1.add(jPanel6, java.awt.BorderLayout.LINE_END);
+
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
+        DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
+        ArrayList<Category> list = CategoryDao.getAllRecords();
+        Iterator<Category> itr = list.iterator();
+        while (itr.hasNext()) {
+            Category categoryObject = itr.next();
+            dtm.addRow(new Object[]{
+                categoryObject.getId(), categoryObject.getName()
+            });
+        }
+    }//GEN-LAST:event_formComponentShown
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        int index = jTable1.getSelectedRow();
+        TableModel model = jTable1.getModel();
+        String id = model.getValueAt(index, 0).toString();
+        String name = model.getValueAt(index, 1).toString();
+        int a = JOptionPane.showConfirmDialog(null, "Estas seguro que quieres eliminar " + name + " Categoria", "Select", JOptionPane.YES_NO_OPTION);
+        if (a == 0) {
+            CategoryDao.delete(id);
+            setVisible(false);
+            new ManageCategory().setVisible(true);
+        }
+    }//GEN-LAST:event_jTable1MouseClicked
 
     private void txtNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyReleased
         validateFields();
@@ -150,42 +261,18 @@ public class ManageCategory extends javax.swing.JFrame {
         category.setName(txtName.getText());
         CategoryDao.save(category);
         setVisible(false);
-        new ManageCategory().setVisible(true);  
+        new ManageCategory().setVisible(true);
     }//GEN-LAST:event_btnSaveActionPerformed
 
-    private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
-        DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
-        ArrayList<Category> list = CategoryDao.getAllRecords();
-        Iterator<Category> itr = list.iterator();
-        while(itr.hasNext()) {
-            Category categoryObject = itr.next();
-            dtm.addRow(new Object[]{
-                categoryObject.getId(),categoryObject.getName()
-            });
-        }
-    }//GEN-LAST:event_formComponentShown
-
-    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        int index = jTable1.getSelectedRow();
-        TableModel model = jTable1.getModel();
-        String id = model.getValueAt(index, 0).toString();
-        String name = model.getValueAt(index, 1).toString();
-        int a = JOptionPane.showConfirmDialog(null, "Estas seguro que quieres eliminar "+name+" Categoria", "Select", JOptionPane.YES_NO_OPTION);
-        if(a == 0) {
-            CategoryDao.delete(id);
-            setVisible(false);
-            new ManageCategory().setVisible(true);
-        }
-    }//GEN-LAST:event_jTable1MouseClicked
-
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-            setVisible(false);
-            new ManageCategory().setVisible(true);
+        setVisible(false);
+        new ManageCategory().setVisible(true);
     }//GEN-LAST:event_btnClearActionPerformed
 
-    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         setVisible(false);
-    }//GEN-LAST:event_btnCloseActionPerformed
+        new AdminMenu().setVisible(true);
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -224,15 +311,20 @@ public class ManageCategory extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClear;
-    private javax.swing.JButton btnClose;
     private javax.swing.JButton btnSave;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
+
 }

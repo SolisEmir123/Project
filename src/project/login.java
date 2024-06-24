@@ -15,6 +15,7 @@ import dao.UserDao;
  * @author emir
  */
 public class login extends javax.swing.JFrame {
+    public String emailPattern = "^[a-zA-Z0-9]+[@]+[a-zA-Z0-9]+[.]+[a-zA-Z0-9]+$";
     public String mobileNumberPattern = "^[0-9]*$";
     
     int xMouse, yMouse;
@@ -35,7 +36,7 @@ public class login extends javax.swing.JFrame {
     public void validateFields(){
         String name = txtName.getText();
         String password = txtPassword.getText();
-        if(!name.equals("") && !password.equals("")) {
+        if(name.matches(emailPattern) && !password.equals("")) {
            login.setEnabled(true);
             
         } else {
@@ -44,10 +45,10 @@ public class login extends javax.swing.JFrame {
     }
 
     public void login(){
-        String name = txtName.getText();
+        String email = txtName.getText();
         String password = txtPassword.getText();
         User user = null;
-        user = UserDao.login(name, password);
+        user = UserDao.login(email, password);
         if(user == null) {
             JOptionPane.showMessageDialog(null, "<html><b style=\"color:red\">Contraseña o usuario incorrecto</b></html>","Message", JOptionPane.ERROR_MESSAGE);
         } else {
@@ -59,7 +60,7 @@ public class login extends javax.swing.JFrame {
             }
             if(user.getStatus().equals("true")) {
                 setVisible(false);
-                Principal principal = new Principal(name);
+                Principal principal = new Principal(email);
                 principal.setVisible(true);
                 principal.setExtendedState(principal.MAXIMIZED_BOTH);
             }
@@ -131,6 +132,9 @@ public class login extends javax.swing.JFrame {
         txtName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtName.setBorder(null);
         txtName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNameKeyPressed(evt);
+            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtNameKeyReleased(evt);
             }
@@ -148,6 +152,9 @@ public class login extends javax.swing.JFrame {
         txtPassword.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtPassword.setBorder(null);
         txtPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPasswordKeyPressed(evt);
+            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtPasswordKeyReleased(evt);
             }
@@ -169,7 +176,7 @@ public class login extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("X");
-        jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel9MouseClicked(evt);
@@ -202,7 +209,7 @@ public class login extends javax.swing.JFrame {
         signup.setForeground(new java.awt.Color(255, 255, 255));
         signup.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         signup.setText("REGISTRARSE");
-        signup.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        signup.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         signup.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 signupMouseClicked(evt);
@@ -237,7 +244,7 @@ public class login extends javax.swing.JFrame {
         login.setForeground(new java.awt.Color(255, 255, 255));
         login.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         login.setText("ENTRAR");
-        login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        login.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         login.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 loginMouseClicked(evt);
@@ -314,6 +321,33 @@ public class login extends javax.swing.JFrame {
     private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
         
     }//GEN-LAST:event_jPanel3MouseClicked
+
+    private void txtNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyPressed
+  String name = txtName.getText();
+        String password = txtPassword.getText();
+        if(!name.equals("") && !password.equals("")) {
+           login.setEnabled(true);
+   char c = (char) evt.getKeyCode();
+    if(c == evt.VK_ENTER){
+        login();
+    }
+            
+        } else {
+        }
+    }//GEN-LAST:event_txtNameKeyPressed
+
+    private void txtPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPasswordKeyPressed
+  String name = txtName.getText();
+        String password = txtPassword.getText();
+        if(!name.equals("") && !password.equals("")) {
+   char c = (char) evt.getKeyCode();
+    if(c == evt.VK_ENTER){
+        login();
+    }
+            
+        } else {
+        }
+    }//GEN-LAST:event_txtPasswordKeyPressed
 
     /**
      * @param args the command line arguments
