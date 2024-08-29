@@ -10,11 +10,7 @@
 <project name="Project" default="default" basedir=".">
     <description>Builds, tests, and runs the project Project.</description>
     <import file="nbproject/build-impl.xml"/>
-<dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-api</artifactId>
-    <version>1.7.32</version> <!-- Ajusta la versión según la que necesites -->
-</dependency>
+
     <!--
 
     There exist several targets which are by default empty and which can be 
