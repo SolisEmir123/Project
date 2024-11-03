@@ -15,8 +15,8 @@ public class OpenPDF {
 
     public static void openById(String id) {
         try {
-            String userHome = System.getProperty("user.home");
-            String filePath = userHome + File.separator + "Documents" + File.separator + id + ".pdf";
+            
+            String filePath = "C:" + File.separator + "PDFS" + File.separator + id + ".pdf";
             File pdfFile = new File(filePath);
 
             if (pdfFile.exists()) {

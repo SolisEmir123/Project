@@ -31,7 +31,6 @@ import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import common.OpenPDF;
-
 import java.io.FileNotFoundException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -615,9 +614,18 @@ public class PlaceOrder extends javax.swing.JFrame {
         
         
             // Código para crear el PDF
-        String userHome = System.getProperty("user.home");
-        String filePath = userHome + File.separator + "Documents" + File.separator + billId + ".pdf";
+        String filePath = "C:" + File.separator + "PDFS" + File.separator + billId + ".pdf";
         
+        // Verificar si la carpeta 'PDFS' existe y crearla si es necesario
+        File directory = new File("C:" + File.separator + "PDFS");
+        if (!directory.exists()) {
+            if (directory.mkdirs()) {
+                System.out.println("Directorio creado: " + directory.getAbsolutePath());
+            } else {
+                System.out.println("Error al crear el directorio.");
+                return;
+            }
+        }
         try (Document document = new Document(new PdfDocument(new PdfWriter(filePath)))) {
             // Añade el contenido al documento
             document.add(new Paragraph("                                    OneDestiny Sistema \n"));

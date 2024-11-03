@@ -13,7 +13,7 @@ public class ConnectionProvider {
     public static Connection getCon(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://monorail.proxy.rlwy.net:11991/railway?useSSL=false","root","qVRuTTqLiMxWtZafHwidDfrKnaqDDpQo");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cafesystem?useSSL=false","soft","viacpo.s12");
             return con;
         }
             catch(Exception e) {

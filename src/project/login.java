@@ -51,6 +51,7 @@ public class login extends javax.swing.JFrame {
         user = UserDao.login(email, password);
         if(user == null) {
             JOptionPane.showMessageDialog(null, "<html><b style=\"color:red\">Contraseña o usuario incorrecto</b></html>","Message", JOptionPane.ERROR_MESSAGE);
+            txtPassword.setText("");
         } else {
             if(user.getStatus().equals("false")) {
                 ImageIcon icon = new ImageIcon("src/popupicon/wait.png");
